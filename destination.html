@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="destination-bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voyage</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- firebase script references -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- our style sheet reference -->
+    <link rel="stylesheet" href="assets/Style/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-trans">
+        <a class="navbar-brand" href="index.html">Voyage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Our Team Members
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://github.com/suzannaudra">Suzann Kowalski</a>
+                        <a class="dropdown-item" href="https://github.com/broken-guitar">David Flores</a>
+                        <a class="dropdown-item" href="https://github.com/thuynguyen-nht">Thuy Nguyen</a>
+                        <a class="dropdown-item" href="https://github.com/SandeshCharka">Sandesh Charka</a>
+
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+    <br>
+    <div class="container destination">
+        <div class="row mt-5">
+
+            <aside class="col-md">
+
+                <div id="destination-page-card" class="row card text-center">
+                    <div class="card-body px-0 pt-0">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                               <!-- dynamically added content here -->
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Bahamas</h5>
+                        <p class="card-text">Introduction about Bahamas</p>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                    <div id="Vienna" class="card-footer">
+                        Bahamas: <span><img class="icon"></span><span class="weather"></span><span class="temp"></span>
+                    </div>
+                </div>
+                <div class="weather-forecast">
+
+                </div>
+
+            </aside>
+
+            <section id="map-container" class="col-md mb-3 rounded">
+                <div id="google-map"></div>
+            </section>
+        </div>
+
+        <div id="webcam-wrapper container" class="row mt-5">
+            <h1 class="display-5 d-table">Nearby Webcam Previews</h1>
+
+            <div id="webcam-container" class="row">
+                <div id="webcam-spinner" class="col ml-3">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading</span>
+                    </div>
+                    <span class="align-top">Loading</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+        <!-- ajax -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXlNMd2yCCZ_3GCmW6CZwZ3zQJcQ1UaTU&callback=initMap" async defer> -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXlNMd2yCCZ_3GCmW6CZwZ3zQJcQ1UaTU" async defer>
+        </script>
+        <!-- our javascript -->
+        <script type="text/javascript" src="assets/javascript/config.js"></script>
+        <script type="text/javascript" src="assets/javascript/voyage-app.js"></script>
+        <script type="text/javascript" src="assets/javascript/weather.js"></script>
+
+</body>
+
+</html>
